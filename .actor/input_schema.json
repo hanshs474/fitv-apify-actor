@@ -1,0 +1,88 @@
+{
+  "title": "Free Image to Video: image to video AI with sound",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "apiKey": {
+      "title": "Free Image to Video API key",
+      "type": "string",
+      "description": "Your API key from https://freeimagetovideo.ai/settings/apikeys (starts with sk-). It is only sent to freeimagetovideo.ai. API runs need a paid plan: they draw on the plan's daily full-speed allowance, then wait in the relaxed queue.",
+      "editor": "textfield",
+      "isSecret": true
+    },
+    "prompt": {
+      "title": "Prompt",
+      "type": "string",
+      "description": "What should happen in the clip. With an image URL, describe the motion; without one, describe the whole scene (text to video).",
+      "editor": "textarea",
+      "prefill": "the camera slowly pushes in while the lantern light flickers and the river flows past"
+    },
+    "imageUrl": {
+      "title": "Image URL (first frame)",
+      "type": "string",
+      "description": "Optional public https image. When set, the photo becomes the first frame (image to video). Leave empty for text to video.",
+      "editor": "textfield"
+    },
+    "duration": {
+      "title": "Duration (seconds)",
+      "type": "string",
+      "description": "Clip length in seconds.",
+      "editor": "select",
+      "default": "5",
+      "enum": [
+        "4",
+        "5",
+        "6",
+        "8",
+        "10",
+        "15"
+      ],
+      "enumTitles": [
+        "4 s",
+        "5 s",
+        "6 s",
+        "8 s",
+        "10 s",
+        "15 s"
+      ]
+    },
+    "resolution": {
+      "title": "Resolution",
+      "type": "string",
+      "editor": "select",
+      "default": "480p",
+      "enum": [
+        "480p",
+        "768p"
+      ]
+    },
+    "aspectRatio": {
+      "title": "Aspect ratio",
+      "type": "string",
+      "editor": "select",
+      "default": "16:9",
+      "enum": [
+        "16:9",
+        "9:16",
+        "1:1"
+      ],
+      "enumTitles": [
+        "16:9 landscape",
+        "9:16 vertical",
+        "1:1 square"
+      ]
+    },
+    "timeoutSecs": {
+      "title": "Timeout (seconds)",
+      "type": "integer",
+      "description": "Stop waiting after this long. Runs can wait in the relaxed queue; the clip still lands in your library on the site.",
+      "default": 1800,
+      "minimum": 60,
+      "maximum": 3600
+    }
+  },
+  "required": [
+    "apiKey",
+    "prompt"
+  ]
+}

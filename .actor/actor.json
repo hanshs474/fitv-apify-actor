@@ -1,0 +1,46 @@
+{
+  "actorSpecification": 1,
+  "name": "free-image-to-video",
+  "title": "Free Image to Video: Image to Video AI with Sound",
+  "description": "Free image to video AI with no daily cap: start with no sign-up, keep going on a free account. Every video comes with sound and no watermark. This Actor turns a photo or a prompt into a clip with sound on your own Free Image to Video API key.",
+  "version": "0.1",
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "overview": {
+          "title": "Generated video",
+          "transformation": { "fields": ["prompt", "imageUrl", "scene", "status", "videoUrl", "taskId", "errorKind", "error"] },
+          "display": {
+            "component": "table",
+            "properties": {
+              "prompt": { "label": "Prompt" },
+              "imageUrl": { "label": "Image", "format": "link" },
+              "scene": { "label": "Mode" },
+              "status": { "label": "Status" },
+              "videoUrl": { "label": "Video URL", "format": "link" },
+              "taskId": { "label": "Run id" },
+              "errorKind": { "label": "Error kind" },
+              "error": { "label": "Error" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "output": {
+    "actorOutputSchemaVersion": 1,
+    "title": "Generated video",
+    "description": "One dataset row per run with the video URL, or the error when the run failed.",
+    "properties": {
+      "videos": {
+        "type": "string",
+        "title": "Generated video",
+        "description": "Dataset rows: prompt, imageUrl, scene, options, taskId, status, videoUrl, and error / errorKind when the run failed.",
+        "template": "{{links.apiDefaultDatasetUrl}}/items?clean=true&format=json"
+      }
+    }
+  }
+}

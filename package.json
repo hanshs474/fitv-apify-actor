@@ -1,0 +1,13 @@
+{
+  "name": "free-image-to-video",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Free image to video AI with no daily cap: start with no sign-up, keep going on a free account. Every video comes with sound and no watermark. This is the official Apify Actor for Free Image to Video.",
+  "author": "Free Image to Video <support@freeimagetovideo.ai>",
+  "homepage": "https://freeimagetovideo.ai/?utm_source=apify&utm_medium=package",
+  "repository": { "type": "git", "url": "https://github.com/hanshs474/fitv-apify-actor" },
+  "scripts": { "start": "node src/main.js", "test": "node --test test.mjs" },
+  "dependencies": { "apify": "^3.2.6" },
+  "license": "MIT"
+}
