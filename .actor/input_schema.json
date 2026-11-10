@@ -54,7 +54,8 @@
       "enum": [
         "480p",
         "768p"
-      ]
+      ],
+      "description": "Output resolution."
     },
     "aspectRatio": {
       "title": "Aspect ratio",
@@ -70,7 +71,8 @@
         "16:9 landscape",
         "9:16 vertical",
         "1:1 square"
-      ]
+      ],
+      "description": "Output shape: landscape, vertical or square."
     },
     "timeoutSecs": {
       "title": "Timeout (seconds)",
